@@ -1,9 +1,13 @@
-﻿package main
+package main
 
-import "context"
+import (
+	"context"
+	"github.com/abbas10r/common/api"
+)
 
 type OrdersService interface {
 	CreateOrder(context.Context) error
+	ValidateOrder(context.Context, *api.CreateOrderRequest) error
 }
 
 type OrdersStore interface {
